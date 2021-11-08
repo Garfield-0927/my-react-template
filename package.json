@@ -1,0 +1,54 @@
+{
+    "name": "react_homework",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "serve": "vite preview",
+        "prepare": "husky install",
+        "eslint": "eslint --fix --ext .{ts,tsx,js,jsx}",
+        "style": "stylelint --fix \"src/**/*.(less|css)\" "
+    },
+    "dependencies": {
+        "eslint-config-alloy": "^4.4.0",
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^14.1.0",
+        "@commitlint/config-conventional": "^14.1.0",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.3.0",
+        "@typescript-eslint/parser": "^5.3.0",
+        "@vitejs/plugin-react": "^1.0.0",
+        "eslint": "^7.17.0",
+        "eslint-plugin-react": "^7.26.1",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "less": "^4.1.2",
+        "lint-staged": "^11.2.6",
+        "prettier": "^2.4.1",
+        "stylelint": "^14.0.1",
+        "stylelint-config-standard": "^23.0.0",
+        "typescript": "^4.3.2",
+        "vite": "^2.6.4",
+        "husky": "^7.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npx lint-staged",
+            "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "{src,test}/**/*.{js,jsx,ts,tsx,json,css,less}": [
+            "prettier --write"
+        ],
+        "{src,test}/**/*.{js,ts,tsx}": [
+            "eslint --fix"
+        ],
+        "src/**/*.{css,less}": [
+            "stylelint --fix"
+        ]
+    }
+}
