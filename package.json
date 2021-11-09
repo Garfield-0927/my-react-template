@@ -25,20 +25,14 @@
         "eslint": "^7.17.0",
         "eslint-plugin-react": "^7.26.1",
         "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^7.0.4",
         "less": "^4.1.2",
         "lint-staged": "^11.2.6",
         "prettier": "^2.4.1",
         "stylelint": "^14.0.1",
         "stylelint-config-standard": "^23.0.0",
         "typescript": "^4.3.2",
-        "vite": "^2.6.4",
-        "husky": "^7.0.0"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npx lint-staged",
-            "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
-        }
+        "vite": "^2.6.4"
     },
     "lint-staged": {
         "{src,test}/**/*.{js,jsx,ts,tsx,json,css,less}": [
@@ -50,5 +44,11 @@
         "src/**/*.{css,less}": [
             "stylelint --fix"
         ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npx lint-staged",
+            "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+        }
     }
 }
