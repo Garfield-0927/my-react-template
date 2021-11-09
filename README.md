@@ -1,13 +1,28 @@
 ## Vite2 构建的React 模板
 
-#### Support
+#### Frame
+
+✔React
+
+
+
+#### Language
 
 ✔ typescript
 
 ✔ less
 
+
+
+#### Lint
+
 ✔ eslint
+
+✔ stylelint
+
+✔ commitlint
 
 ✔ prettier
 
 ✔ husky
+
